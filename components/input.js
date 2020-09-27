@@ -1,0 +1,20 @@
+import React from 'react';
+import { TextInput, StyleSheet } from 'react-native';
+
+const input = props => {
+  return (
+    //{...props} is the spread operator in this case it's allowing the parrent components to have props that will also apply to the child component
+    <TextInput {...props}  style={{...styles.input, ...props.style }} />
+  );
+};
+
+const styles = StyleSheet.create({
+  input: {
+    height: 30,
+
+    borderBottomColor : 'grey',
+    borderBottomWidth: 1
+  }
+});
+
+export default input;
